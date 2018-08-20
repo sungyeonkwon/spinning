@@ -13,7 +13,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
-    url(r'^', include('sampleapp.urls')),
+    url(r'^', include('home.urls')),
     ## above is sampleapp url pattern that I probably want to delete
     re_path(r'^admin/', include(wagtailadmin_urls)),
     re_path(r'^documents/', include(wagtaildocs_urls)),

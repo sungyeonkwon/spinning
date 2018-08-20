@@ -1,0 +1,59 @@
+{% load static wagtailuserbar %}
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}{{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
+<!--        <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.css' %}">-->
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+        <div id="menu_wrapper">
+        <ul class="menu_list">
+            <a href="/">
+                <li class="menu_item" id="home" onmouseover="changeText('a', 'home')" onmouseout="changeback('foyer', 'home')">foyer</li></a>
+            
+            <a href="/projects/">
+                <li class="menu_item" id="projects" onmouseover="changeText('website', 'projects')" onmouseout="changeback('scenes', 'projects')">scenes</li></a>
+            
+            <a href="/writings/">
+                <li class="menu_item" id="writings" onmouseover="changeText('with', 'writings')" onmouseout="changeback('sentences', 'writings')">sentences</li></a>
+            
+            <a href="/words/">
+                <li class="menu_item" id="back" onmouseover="changeText('stuff', 'back')" onmouseout="changeback('words', 'back')">words</li></a>
+        </ul>
+        </div>
+
+        <div class="content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <footer class="footer"></footer>
+        
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/libs/swiper.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>
