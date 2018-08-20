@@ -1,0 +1,13 @@
+blog2
+secret.sh
+*.pyc
+.DS_Store
+*.log
+*.swp
+*.retry
+.env
+*~
+/logs
+/data
+.~*
+__pycache__
