@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # 'sampleapp',
     'home',
+    'blog',
+    'word',
+    'project',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
