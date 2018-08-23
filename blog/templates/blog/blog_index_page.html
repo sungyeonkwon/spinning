@@ -11,12 +11,23 @@
     {% for post in blogpages %}
         {% with post=post.specific %}
             <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-            {% if post.main_image %}
+
+
+<!--             {% if post.main_image %}
                 {% with post.main_image as main_image %}
                     {% if main_image %}{% image main_image width-600 %}{% endif %}
                 {% endwith %}
             <br/><br/>
-            {% endif %}
+            {% endif %} -->
+
+            {% for item in post.gallery_images.all %}
+                <div style="float: left; margin: 10px">
+                    {% image item.image width-800 %}
+                    <p class="caption">{{ item.caption }}</p>
+                </div>
+            {% endfor %}
+
+
             {{ post.body|richtext }}
         {% endwith %}
     {% endfor %}
