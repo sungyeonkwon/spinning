@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-projectpage{% endblock %}
+
+{% block content %}
+    <div class="return">
+    <p><a href="{{ page.get_parent.url }}">← Projects</a></p>
+    </div>
+    <br/><br/>
+
+    <h1>{{ page.title }}</h1>
+
+    <p class="meta">{{ page.date }}</p>
+    {{ page.description|richtext }}
+
+    {% for item in page.gallery_images.all %}
+        <div style="float: left; margin: 10px">
+            {% image item.image fill-320x240 %}
+            <p>{{ item.caption }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
