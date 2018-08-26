@@ -67,16 +67,58 @@ div {
 }
 
 
-.menu_item{
-	display:inline-block;
-	width:20%;
-	text-align:center;
-	padding-top:10px;
-	position:relative;
-    text-decoration: none;
 
+
+.menu_item{
+  display:inline-block;
+  width:20%;
+  text-align:center;
+  padding-top:10px;
+  position:relative;
+  text-decoration: none;
 }
 
+.bg_menu_item{
+  display:inline-block;
+  width:20%;
+  text-align:center;
+  padding-top:10px;
+  background-repeat:no-repeat;
+  background-image: url(../img/oval-test-1.svg);
+  position:relative;
+}
+
+
+
+.svg-container {
+  position:absolute;
+}
+
+/*menu circle*/
+svg {
+
+  height:100%;
+  width:100%;
+  overflow: visible;
+}
+
+.menuellipse {
+  cx:20;
+  cy:5;
+  rx:20;
+  ry:5;
+
+  stroke:black;
+  stroke-width:0.1;
+  fill:yellow;
+}
+
+.ellipse1 {
+    fill:red;
+}
+.ellipse2 {
+    fill:blue;
+}
 /*content*/
 
 .content-wrapper, .footer {
@@ -232,3 +274,12 @@ hr {
 	top: 50%;
 	@include prefix(translate(-50%,-50%));
 }
+
+/*oval background image test*/
+.oval-test {
+  /*background-size: 85%;*/
+  /*background-repeat: no-repeat;*/
+  background-image: url(../img/oval-test-1.svg);
+  /*background-position: 75% 0;*/
+}
+
