@@ -11,13 +11,18 @@
     {% for post in blogpages %}
         {% with post=post.specific %}
             <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+<<<<<<< HEAD
 
 
 <!--             {% if post.main_image %}
+=======
+            {% if post.main_image %}
+>>>>>>> 3ea991786a4f528fbfd6af89831f25a225a45100
                 {% with post.main_image as main_image %}
                     {% if main_image %}{% image main_image width-600 %}{% endif %}
                 {% endwith %}
             <br/><br/>
+<<<<<<< HEAD
             {% endif %} -->
 
             {% for item in post.gallery_images.all %}
@@ -28,6 +33,9 @@
             {% endfor %}
 
 
+=======
+            {% endif %}
+>>>>>>> 3ea991786a4f528fbfd6af89831f25a225a45100
             {{ post.body|richtext }}
         {% endwith %}
     {% endfor %}
