@@ -12,48 +12,12 @@
     </div>
 -->
 
-<<<<<<< HEAD
-=======
     <!-- Slider main container -->
-    <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            {% if page.item %}
-                {% for item in page.item %}
-            
-            
-<!--
-                    {% if item.block_type == 'textitem' %}
-                        <a href="{{ item.value.link }}" target="_blank">{{ item.value.text }}</a>
-                    {% endif %}
--->
-
-                    {% if item.block_type == 'imageitem' %}
-                         {% image item.value.image width-9000 as slide%}
-
-                        <div class="swiper-slide"><img src="{{slide.url}}" srcset="{{slide.url}} 2000w" class="swiper__image" /></div>
-            
-                    {% endif %}
-            
-            
-                {% endfor %}
-            {% endif %}
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-        </div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-    </div>
-
-    hello
 
 
->>>>>>> 3ea991786a4f528fbfd6af89831f25a225a45100
+    Placeholder
+
+
     {% if page.item %}
         hello again
         {% for item in page.item %}

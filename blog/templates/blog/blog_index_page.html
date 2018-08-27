@@ -7,38 +7,38 @@
 {% block content %}
 
 <!--    <h1>{{ page.title }}</h1>-->
-    <div class="content_wrapper_blog">
     {% for post in blogpages %}
+    <div class="content_wrapper_blog">
         {% with post=post.specific %}
-            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-<<<<<<< HEAD
+            <div class="offset_heading">
+                <!-- <a href="{% pageurl post %}"> -->
+                <span class="typesize_heading offset_heading">{{ post.title }}</span>
+                <!-- </a> -->
+            </div>
 
 
 <!--             {% if post.main_image %}
-=======
             {% if post.main_image %}
->>>>>>> 3ea991786a4f528fbfd6af89831f25a225a45100
                 {% with post.main_image as main_image %}
                     {% if main_image %}{% image main_image width-600 %}{% endif %}
                 {% endwith %}
             <br/><br/>
-<<<<<<< HEAD
             {% endif %} -->
 
             {% for item in post.gallery_images.all %}
-                <div style="float: left; margin: 10px">
-                    {% image item.image width-800 %}
+<!--                 <div style="float: left; margin: 10px"> -->
+                <div class="image_blog">
+                    {% image item.image width-300 %}
                     <p class="caption">{{ item.caption }}</p>
                 </div>
             {% endfor %}
 
 
-=======
             {% endif %}
->>>>>>> 3ea991786a4f528fbfd6af89831f25a225a45100
             {{ post.body|richtext }}
         {% endwith %}
-    {% endfor %}
     </div>
+    {% endfor %}
+    
 
 {% endblock %}
