@@ -4,7 +4,7 @@ body{
 	padding:0;
     font-family: 'Times New Roman', serif;
     letter-spacing: 0.05em;
-    background-color: lightgrey;
+    /*background-color: white;*/
 }
 
 
@@ -16,20 +16,51 @@ body{
     background-color: yellow;
 }
 
+/************ BACKGROUNDS ************/
+.template-blogindexpage{
+  background: yellow;
+  background: -moz-linear-gradient(top,  yellow 0%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,yellow), color-stop(100%,white));
+  background: -webkit-linear-gradient(top,  yellow 0%,white 100%);
+  background: -o-linear-gradient(top,  yellow 0%,white 100%);
+  background: -ms-linear-gradient(top,  yellow 0%,white 100%);
+  background: linear-gradient(to bottom,  yellow 0%,white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='yellow', endColorstr='white',GradientType=0 );
+  background-attachment: fixed;
 
+}
 
-/*  LAYOUT  */
+.template-wordindexpage{
+  background-color: #e6e6e6;
+  background-attachment: fixed;
+
+}
+/************  LAYOUT  ************/
 
 .content-wrapper, .footer {
-  margin: 20px;
+  margin:0 auto;
+  padding-top:30px;
+/*  margin: 20px;
   margin-left: 20px;
-  margin-right: 10%;
+  margin-right: 10%;*/
 }
+
+/* PAGE: blog */
+
 .content_wrapper_blog{
   width:55%;
   margin:0 auto;
   display:block;
   padding-bottom:100px;
+
+}
+
+
+.heading_blog{
+    text-align:center;
+
+    padding-bottom:50px;
+
 }
 
 .offset_heading {
@@ -43,8 +74,38 @@ body{
   padding-bottom:30px;
 }
 
+/* PAGE: words */
 
-/*  TYPOGRAPHY  */
+.content_wrapper_words {
+  width:100%;
+  margin:0 auto;
+  display:block;
+    text-align:center;
+
+}
+
+.words{
+  width:100%;
+    /*overflow:auto;*/
+}
+
+/*.keyword {
+    width:20%;
+    float: left;
+}*/
+
+.example {
+    width: 33.3333%;
+    float: left;
+}
+
+.example_container{
+  width:80%;
+  margin:0 auto;
+}
+
+/************  TYPOGRAPHY  ************/
+
 
 h1, h2, p, ul, a {
     font-size: 20px;
@@ -136,19 +197,6 @@ hr {
     border-top: 1px solid black;
 }
 
-/*page: word*/
-.words{
-    overflow:auto;
-}
-.keyword {
-    width:20%;
-    float: left;
-}
-
-.example {
-    width: 75%;
-    float: right;
-}
 
 
 

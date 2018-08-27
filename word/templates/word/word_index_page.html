@@ -6,17 +6,18 @@
 
 {% block content %}
 
-    <div class="content_wrapper_blog">
+    <div class="content_wrapper_words">
     {% for post in wordpages %}
         {% with post=post.specific %}
         
         <div class="words">
-        <div class="keyword">
-            <a href="{{post.dictlink}}" target="_blank"> {{ post.title }} </a>
-        </div>
-        <div class="example">
-            {{ post.sentence|richtext }}
-        </div>
+<!--             <div class="keyword">
+                <a href="{{post.dictlink}}" target="_blank"> {{ post.title }} </a>
+            </div> -->
+
+            <div class="example">
+                <div class="example_container">{{ post.sentence|richtext }}</div>
+            </div>
         </div>
         {% endwith %}
     {% endfor %}
