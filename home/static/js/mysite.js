@@ -1,5 +1,5 @@
-// text
-console.log("hello");
+// connection test 
+console.log("hello.");
 
 // menu text change
 function changeText(text, item)
@@ -15,21 +15,64 @@ function changeback(text, item)
         item.textContent = text;
     }
 
-// swiper 
-  window.onload = function () {
-    console.log("swiper initialised");  
-    //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-//      loop: true,
-      speed: 400,
-      spaceBetween: 0,
-        
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-        
-    })
+
+
+// first grab the example text
+// second grab the word text + div element (initially hidden)
+
+// var wordBox = 
+// var word = 
+var example = document.getElementsByClassName("word_link");
+
+var flag = [];
+function wordShow(event){
+  for (var i = 0; i < example.length; i++) {
+
+    flag[i] = 0;
+    example[i].addEventListener("click", function( event ) {
+    console.log("this is working");
+
+    });
   };
+};
+
+wordShow();
+
+// make a function: 
+
+// iterate over word, wordbox, example sentence
+// function 1: visibility = show
+// function 2: visibility = hidden
+
+// for all the elements, attach the eventlistener
+// EVENT:
+// example[i] + hover ->> show wordbox[i], word[i]
+// example[i] + click ->> 
+//    show wordbox[i], word[i]
+
+// example[i] + click ->> show wordbox[i], word[i]
+
+// 
+//  when mouse over: display show (z index consideration)
+//  when mouse out: display hidden
+// when clicked: show
+// when clicked again: hidden
+
+
+
+// var comments = document.getElementsByClassName('button');
+// var numComments = comments.length;
+
+// function showComment(e) {
+//   var place = document.getElementById('textfield');
+//   var commentBox = document.createElement('textarea');
+//   place.appendChild(commentBox);
+//   for (var i = 0; i < numComments; i++) {
+//     comments[i].removeEventListener('click', showComment, false);
+//   }
+// }
+
+// for (var i = 0; i < numComments; i++) {
+//   comments[i].addEventListener('click', showComment, false);
+// }
+

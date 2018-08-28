@@ -11,12 +11,26 @@
         {% with post=post.specific %}
         
         <div class="words">
-<!--             <div class="keyword">
-                <a href="{{post.dictlink}}" target="_blank"> {{ post.title }} </a>
-            </div> -->
 
-            <div class="example">
-                <div class="example_container">{{ post.sentence|richtext }}</div>
+            <div class="example flex-container">
+            <div class="word-hover-box">
+
+                <!-- keyword -->
+                <div class="keyword" id="{{ post.title }}">
+                    <a href="{{post.dictlink}}" target="_blank">
+                        <div class="typesize_heading">{{ post.title }} </div>
+                    </a>
+                </div>
+
+                <!-- example sentence -->
+                <div class="example_container flex-item">
+                    <a class="word_link" href="{{post.dictlink}}" target="_blank">
+                        {{ post.sentence|richtext }}
+                    </a>
+                </div>
+
+
+            </div>
             </div>
         </div>
         {% endwith %}
@@ -25,3 +39,4 @@
 
 
 {% endblock %}
+
