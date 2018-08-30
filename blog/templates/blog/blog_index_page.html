@@ -28,7 +28,7 @@
             {% for item in post.gallery_images.all %}
 <!--                 <div style="float: left; margin: 10px"> -->
                 <div class="image_blog">
-                    {% image item.image width-300 %}
+                    {% image item.image width-500 %}
                     <p class="caption">{{ item.caption }}</p>
                 </div>
             {% endfor %}
