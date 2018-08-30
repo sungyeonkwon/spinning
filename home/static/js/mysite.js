@@ -20,23 +20,91 @@ function changeback(text, item)
 // first grab the example text
 // second grab the word text + div element (initially hidden)
 
-// var wordBox = 
-// var word = 
-var example = document.getElementsByClassName("word_link");
+// $(".word-hover-box");
+// $(".span_word");
+// $(".span_example");
 
-var flag = [];
-function wordShow(event){
-  for (var i = 0; i < example.length; i++) {
+var wordHoverBox = document.querySelectorAll(".word-hover-box");
+var spanExample = document.querySelectorAll(".span_example");
+var spanWord = document.querySelectorAll(".span_word");
+var flag =[];
+for (let i = 0; i < wordHoverBox.length; i++) {
+    spanWord[i].style.visibility = "hidden";
+    wordHoverBox[i].style.visibility = "hidden";
+    flag.push(0);
 
-    flag[i] = 0;
-    example[i].addEventListener("click", function( event ) {
-    console.log("this is working");
-
+    spanExample[i].addEventListener("mouseover", function(){ 
+        spanExample[i].style.visibility = "hidden";
+        wordHoverBox[i].style.visibility = "visible";
+        spanWord[i].style.visibility = "visible";
+        
     });
-  };
-};
 
-wordShow();
+    // if flag=clicked : no mouseout
+    // else flag=unclicked: yes mouseout
+
+    spanExample[i].addEventListener("mouseout", function(){ 
+        console.log(flag[i]);
+        if (flag[i] !== 1){
+        spanExample[i].style.visibility = "visible";
+        wordHoverBox[i].style.visibility = "hidden";
+        spanWord[i].style.visibility = "hidden";
+        } else{
+        spanExample[i].style.visibility = "hidden";
+        wordHoverBox[i].style.visibility = "visible";
+        spanWord[i].style.visibility = "visible";
+        }
+    });
+
+    spanExample[i].addEventListener("click", function(){ 
+
+        spanExample[i].style.visibility = "hidden";
+        wordHoverBox[i].style.visibility = "visible";
+        spanWord[i].style.visibility = "visible";
+        console.log(flag[i] + spanExample[i]+ "clicked");
+        flag[i] = 1;
+        
+    });
+
+    wordHoverBox[i].addEventListener("click", function(){ 
+        if (flag[i] == 1){
+        spanExample[i].style.visibility = "visible";
+        wordHoverBox[i].style.visibility = "hidden";
+        spanWord[i].style.visibility = "hidden";
+        console.log(flag[i] + spanExample[i]+ "clicked again");
+        flag[i] = 0;
+        }
+        
+    });    
+    // spanExample[i].addEventListener("mouseover", function(){ 
+    //     // if the example is there, show 
+    //     if (spanExample[i].style.visibility !== "hidden"){
+    //         spanExample[i].style.visibility = "hidden";
+    //         wordHoverBox[i].style.visibility = "visible";
+    //         spanWord[i].style.visibility = "visible";
+    //     } 
+    // });
+}
+
+
+
+
+
+// for (var i = 0; i < hoverBox.length; i++) {
+//     console.log("this is working" + [i]);
+//     console.log(hoverBox[i]);
+
+//     hoverBox[i].addEventListener("click", function(){ 
+//         alert("Hello World!" + i ); 
+//     });
+//     // wordHoverBox[i].addEventListener("click", function(event) {
+//     //     console.log("this is working" + [i]);
+//     //     // wordHoverBox[i].style.display = "none";
+//     // });
+// };
+
+
+
 
 // make a function: 
 

@@ -13,24 +13,25 @@
         <div class="words">
 
             <div class="example flex-container">
-            <div class="word-hover-box">
+            <div class="word-hover-box"></div>
 
-                <!-- keyword -->
-                <div class="keyword" id="{{ post.title }}">
-                    <a href="{{post.dictlink}}" target="_blank">
-                        <div class="typesize_heading">{{ post.title }} </div>
-                    </a>
-                </div>
-
-                <!-- example sentence -->
-                <div class="example_container flex-item">
-                    <a class="word_link" href="{{post.dictlink}}" target="_blank">
-                        {{ post.sentence|richtext }}
-                    </a>
-                </div>
-
-
+            <!-- keyword -->
+            <div class="keyword" id="{{ post.title }}">
+                <a href="{{post.dictlink}}" target="_blank">
+                    <span class="span_word">{{ post.title }}</span>
+                </a>
             </div>
+
+            <!-- example sentence -->
+            <!-- <div class="example_container"> -->
+            <div class="example_container flex-item">
+
+                <a class="word_link" href="{{post.dictlink}}" target="_blank">
+                    <span class="span_example">{{ post.sentence|richtext }}</span>
+                </a>
+            </div>
+
+
             </div>
         </div>
         {% endwith %}

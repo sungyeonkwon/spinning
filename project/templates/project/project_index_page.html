@@ -14,23 +14,23 @@
 <!--            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>-->
     <div class="test-diagonal"></div>         
 
-            <a href="{{post.link}}" target="_blank">
+            <!-- <a href="{{post.link}}" target="_blank"> -->
         
             <!-- <p>{{ post.title }}</p><br/> -->
-            <!-- {% load static %} -->
-            <!-- <img src="{% static 'img/placeholder.svg' %}" width="50%"/> -->
-<!--
+            {% load static %}
+
             {% with post.main_image as main_image %}
                 {% if main_image %}
                     {% image main_image fill-160x100 %}
                 {% endif %}
             {% endwith %}
--->
+
             
-            </a>
+            <!-- </a> -->
         
             <!-- <p>{{ post.caption }}</p> -->
             <!-- <p>{{ post.description|richtext }}</p><br/><br/><br/> -->
+
         {% endwith %}
     {% endfor %}
     </div>
